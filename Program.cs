@@ -5,6 +5,7 @@ var builder=WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDb>(o=>o.UseSqlServer(builder.Configuration.GetConnectionString("BankDb")));
 builder.Services.AddControllers();
 builder.Services.AddScoped<ICalculationService, CalculationService>();
+builder.Services.AddScoped<ICrmDirectoryService, CrmDirectoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ISubProductService, SubProductService>();
 builder.Services.AddScoped<IProductSegmentService, ProductSegmentService>();
